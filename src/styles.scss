@@ -100,7 +100,7 @@ bh-emp_landing, emp_date_picker,emp_available_days{
     } 
 }
 
-bh-submit_new_request,bh-man_landing, man_date_picker,bh-veiw_requests,bh-man_options{
+bh-submit_new_request,bh-man_landing, man_date_picker,bh-veiw_requests,bh-man_options,bh-approve_deny{
     width: 100% !important;
     height: 100% !important;
     .mat-icon{
@@ -157,7 +157,7 @@ input:-webkit-autofill {
     font-size: 75px;
     color: #c91825;
 }
- .whiteBox {
+.whiteBox {
     border-radius: 4px;
     padding: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -191,3 +191,41 @@ input:-webkit-autofill {
     text-align: center;
 }
 
+.greyBox {
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 1px solid transparent;
+    margin-bottom: 20px;
+    background-color: #a9a9a959;
+    .greyBoxTickIcon{
+        font-size: 35px;
+        color: green;
+        height: fit-content;
+        width: fit-content;
+    }
+    .greyBoxCrossIcon{
+    font-size: 35px;
+    color: red;
+    height: fit-content;
+    width: fit-content;
+    }
+    .greyBoxPendingIcon{
+    font-size: 35px;
+    color: orange;
+    height: fit-content;
+    width: fit-content;
+    }
+    .greyBoxSmallText{
+        font-size: 10px;
+    }
+    greyBoxBigText{
+        font-size: 20px;
+    }   
+}
+.manOptionsBody{
+    height: calc(100vh - 340px);
+}
+.fullvh{
+    height:100vh
+}

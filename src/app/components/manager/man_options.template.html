@@ -1,30 +1,34 @@
 <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
-  <div fxLayout="column wrap" fxFlex="351px" fxLayoutAlign="start stretch" [fxShow]="true">
-    <div fxLayout="row wrap" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/man/new">
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <mat-icon class="whiteBoxIcon" color="red">beach_access</mat-icon>
-      </div>
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div>
-            <p class="whiteBoxText">My leave</p>
+  <div fxLayout="column wrap" class="manOptionsBody" fxFlex="351px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/man/new">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-icon class="whiteBoxIcon" color="red">beach_access</mat-icon>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div>
+                <p class="whiteBoxText">My leave</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/man/view">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-icon class="whiteBoxIcon" color="red">person_pin</mat-icon>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div>
+                <p class="whiteBoxText">Employee leave</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div fxLayout="row wrap" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/man/view">
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <mat-icon class="whiteBoxIcon" color="red">person_pin</mat-icon>
-      </div>
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div>
-            <p class="whiteBoxText">Employee leave</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div fxLayout="row wrap" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/login">
+    <div fxLayout="row wrap" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/login">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <mat-icon class="whiteBoxIcon" color="red">exit_to_app</mat-icon>
       </div>

@@ -95,6 +95,7 @@ export class man_landingComponent {
     try {
       this.page.routeSelected = false;
       this.page.showManagerOptions = true;
+      this.page.currentUser = undefined;
       bh = this.sd_lG72TArY5oBhoig0(bh);
       //appendnew_next_sd_1brxrcjlnqUbSe4U
       return bh;
@@ -122,10 +123,32 @@ export class man_landingComponent {
         page.showManagerOptions = true;
       }
 
+      bh = this.storeUserLocally(bh);
       //appendnew_next_sd_5S1im7arFsl6GJM5
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_5S1im7arFsl6GJM5');
+    }
+  }
+
+  storeUserLocally(bh) {
+    try {
+      this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+      this.sd_DOu631CMcoRHGRrS(bh);
+      //appendnew_next_storeUserLocally
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_cro96aqUEYPUz64b');
+    }
+  }
+
+  sd_DOu631CMcoRHGRrS(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.currentUser);
+      //appendnew_next_sd_DOu631CMcoRHGRrS
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_DOu631CMcoRHGRrS');
     }
   }
 

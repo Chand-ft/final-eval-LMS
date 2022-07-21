@@ -61,12 +61,26 @@ export class emp_landingComponent {
     }
   }
 
+  logout(...others) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_OaG2Aj0seVzaXkRK(bh);
+      //appendnew_next_logout
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_R451aqKt28TtdCCS');
+    }
+  }
+
   //appendnew_flow_emp_landingComponent_start
 
   sd_yPvcUA2aCiDQhVW5(bh) {
     try {
-      this.page.objFromClient = undefined;
-      bh = this.sd_3X9h0x0J10WFsiXt(bh);
+      this.page.currentUser = {};
+      bh = this.sd_yxq0WcgSzSoaNAg7(bh);
       //appendnew_next_sd_yPvcUA2aCiDQhVW5
       return bh;
     } catch (e) {
@@ -74,30 +88,38 @@ export class emp_landingComponent {
     }
   }
 
-  async sd_3X9h0x0J10WFsiXt(bh) {
+  sd_yxq0WcgSzSoaNAg7(bh) {
+    try {
+      this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+      this.sd_hkg2oUMT9nESAd4i(bh);
+      //appendnew_next_sd_yxq0WcgSzSoaNAg7
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_yxq0WcgSzSoaNAg7');
+    }
+  }
+
+  sd_hkg2oUMT9nESAd4i(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.currentUser);
+      //appendnew_next_sd_hkg2oUMT9nESAd4i
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_hkg2oUMT9nESAd4i');
+    }
+  }
+
+  async sd_OaG2Aj0seVzaXkRK(bh) {
     try {
       const testClientInstance: testClient =
         this.__page_injector__.get(testClient);
 
-      let outputVariables = await testClientInstance.sd_rAxC2XUmdYGxqowX();
-      this.page.objFromClient = outputVariables.local.clientResult;
+      let outputVariables = await testClientInstance.logout();
 
-      bh = this.sd_J0oh5ypAawzQuAlh(bh);
-      //appendnew_next_sd_3X9h0x0J10WFsiXt
+      //appendnew_next_sd_OaG2Aj0seVzaXkRK
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_3X9h0x0J10WFsiXt');
-    }
-  }
-
-  sd_J0oh5ypAawzQuAlh(bh) {
-    try {
-      const page = this.page;
-      console.log(page.objFromClient);
-      //appendnew_next_sd_J0oh5ypAawzQuAlh
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_J0oh5ypAawzQuAlh');
+      return await this.errorHandler(bh, e, 'sd_OaG2Aj0seVzaXkRK');
     }
   }
 

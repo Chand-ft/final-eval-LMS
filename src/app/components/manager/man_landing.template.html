@@ -8,12 +8,12 @@
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <div>
-            <p class="loginRegHeading">Name</p>
+            <p class="loginRegHeading">{{page.currentUser.empId}}</p>
           </div>
         </div>
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <div>
-            <p class="loginRegHeading">Role: Line Manager</p>
+            <p class="loginRegHeading">{{page.currentUser.role}}</p>
           </div>
         </div>
       </div>

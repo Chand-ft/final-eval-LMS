@@ -1,0 +1,43 @@
+<div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center stretch" [fxShow]="true">
+    <div fxLayout="row wrap" style="height:70px;" class="marginBottom30 navBar fullWidth" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="column wrap" class="marginLeft20 pointerCursor" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/man/view">
+        <mat-icon><span class="material-icons-round"> arrow_back_ios </span></mat-icon>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div>
+          <p>Requests</p>
+        </div>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/logo.png" width="50px"></div>
+    </div>
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true" *ngIf="page.resultFormDB">
+        <div fxLayout="row wrap" class="greyBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let item of page.resultFormDB, let i = index">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div>
+                <p class="greyBoxBigText">{{item.owner}}</p>
+                <p class="greyBoxSmallText">Leave type: {{item.leaveType}}</p>
+                <!-- <p class="greyBoxSmallText">Start date: {{i.startDate |Date: mediumDate}}</p> -->
+                <p class="greyBoxSmallText">Start date: {{item.startDate}}</p>
+                <p class="greyBoxSmallText">End date: {{item.endDate}}</p>
+                <p class="greyBoxSmallText">Extra Notes: {{item.textArea}}</p>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-icon class="pointerCursor greyBoxTickIcon">check</mat-icon>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-icon class="pointerCursor greyBoxCrossIcon">clear</mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,33 +1,46 @@
 <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
-  <form class="fullWidth">
+  <form #regForm="ngForm" class="fullWidth">
     <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
       <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/logoSmall.png" class="fullWidth"></div>
       <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
         <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div fxLayout="row wrap" class="marginBottom30 fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="marginBottom30" fxLayoutAlign="start stretch" [fxShow]="true">
             <div>
               <p class="loginRegHeading">Register</p>
             </div>
           </div>
           <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput type="email" placeholder="Your email address" [required]="false">
+              <input matInput [(ngModel)]="page.dm.register.email" name="email" type="email" placeholder="Your email address" [required]="true">
+              <mat-error align="start" *ngIf="regForm.submitted &amp;&amp; regForm.controls.email.errors?.required">Email ID is required</mat-error>
               <mat-icon matSuffix>mail</mat-icon>
             </mat-form-field>
           </div>
           <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput type="text" placeholder="Name" [required]="false">
+              <input matInput [(ngModel)]="page.dm.register.empId" name="empId" type="text" placeholder="Name" [required]="true">
+              <mat-error align="start" *ngIf="regForm.submitted &amp;&amp; regForm.controls.empId.errors?.required">Employee ID is required</mat-error>
               <mat-icon matSuffix>account_circle</mat-icon>
             </mat-form-field>
           </div>
           <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+              <mat-select placeholder="Role" [(ngModel)]="page.dm.register.role" [required]="true" name="role">
+                <ng-template ngFor let-option [ngForOf]="page.roles" let-i="index">
+                  <mat-option [value]="option">{{option}}</mat-option>
+                </ng-template>
+              </mat-select>
+              <mat-error align="start" *ngIf="regForm.submitted &amp;&amp; regForm.controls.role.errors?.required">Role is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
             <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-              <input matInput placeholder="Password" [required]="false">
+              <input matInput [(ngModel)]="page.dm.register.password" name="password" type="password" placeholder="Password" [required]="true">
+              <mat-error align="start" *ngIf="regForm.submitted &amp;&amp; regForm.controls.password.errors?.required">Password is required</mat-error>
               <mat-icon matSuffix>lock</mat-icon>
             </mat-form-field>
           </div>
-          <div fxLayout="row wrap" class="marginTop30" fxLayoutAlign="center stretch" [fxShow]="true"><button mat-button class="redButton">REGISTER</button></div>
+          <div fxLayout="row wrap" class="marginTop30" fxLayoutAlign="center stretch" [fxShow]="true"><button mat-button class="redButton" (click)="register(regForm)">REGISTER</button></div>
         </div>
       </div>
     </div>

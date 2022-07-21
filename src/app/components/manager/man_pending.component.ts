@@ -12,16 +12,17 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { testClient } from 'app/sd-services/testClient'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-man_options',
-  templateUrl: './man_options.template.html',
+  selector: 'bh-man_pending',
+  templateUrl: './man_pending.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class man_optionsComponent {
+export class man_pendingComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -38,7 +39,7 @@ export class man_optionsComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_ZDoBWnJKz7jmmrpJ(bh);
+      this.sd_mRuxSwcVVwgVKsoi(bh);
     }
   }
 
@@ -50,47 +51,71 @@ export class man_optionsComponent {
     //append_listeners
   }
 
-  sd_ZDoBWnJKz7jmmrpJ(bh) {
+  sd_mRuxSwcVVwgVKsoi(bh) {
     try {
-      bh = this.sd_pbEyaOstyrxzIecr(bh);
-      //appendnew_next_sd_ZDoBWnJKz7jmmrpJ
+      bh = this.sd_0KHRQeH5x0e0otyl(bh);
+      //appendnew_next_sd_mRuxSwcVVwgVKsoi
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ZDoBWnJKz7jmmrpJ');
+      return this.errorHandler(bh, e, 'sd_mRuxSwcVVwgVKsoi');
     }
   }
 
-  //appendnew_flow_man_optionsComponent_start
+  //appendnew_flow_man_pendingComponent_start
 
-  sd_pbEyaOstyrxzIecr(bh) {
+  sd_0KHRQeH5x0e0otyl(bh) {
     try {
-      this.page.currentUser = undefined;
-      bh = this.storeUserLocally(bh);
-      //appendnew_next_sd_pbEyaOstyrxzIecr
+      this.page.resultFormDB = undefined;
+      bh = this.sd_5xqJSLoLR2mW5ht1(bh);
+      //appendnew_next_sd_0KHRQeH5x0e0otyl
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_pbEyaOstyrxzIecr');
+      return this.errorHandler(bh, e, 'sd_0KHRQeH5x0e0otyl');
     }
   }
 
-  storeUserLocally(bh) {
+  sd_5xqJSLoLR2mW5ht1(bh) {
     try {
-      this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-      this.sd_ZK9wqSh1MHRsC7vW(bh);
-      //appendnew_next_storeUserLocally
+      const page = this.page;
+      bh.input.path = 'getLeaveRequests';
+      bh.input.method = 'Get';
+      bh.input.body = {};
+
+      bh = this.sd_Ul1PVgSGjDPQjzhk(bh);
+      //appendnew_next_sd_5xqJSLoLR2mW5ht1
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_uxO0xLG6tW8o7TBh');
+      return this.errorHandler(bh, e, 'sd_5xqJSLoLR2mW5ht1');
     }
   }
 
-  sd_ZK9wqSh1MHRsC7vW(bh) {
+  async sd_Ul1PVgSGjDPQjzhk(bh) {
     try {
-      console.log(new Date().toLocaleTimeString(), this.page.currentUser);
-      //appendnew_next_sd_ZK9wqSh1MHRsC7vW
+      const testClientInstance: testClient =
+        this.__page_injector__.get(testClient);
+
+      let outputVariables = await testClientInstance.dynamicApiCall(
+        bh.input.path,
+        bh.input.body,
+        bh.input.method
+      );
+      this.page.resultFormDB = outputVariables.local.results;
+
+      this.sd_4Pd0gTTbIkvibI1P(bh);
+      //appendnew_next_sd_Ul1PVgSGjDPQjzhk
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ZK9wqSh1MHRsC7vW');
+      return await this.errorHandler(bh, e, 'sd_Ul1PVgSGjDPQjzhk');
+    }
+  }
+
+  sd_4Pd0gTTbIkvibI1P(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.resultFormDB);
+      //appendnew_next_sd_4Pd0gTTbIkvibI1P
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4Pd0gTTbIkvibI1P');
     }
   }
 
@@ -116,5 +141,5 @@ export class man_optionsComponent {
       throw e;
     }
   }
-  //appendnew_flow_man_optionsComponent_Catch
+  //appendnew_flow_man_pendingComponent_Catch
 }

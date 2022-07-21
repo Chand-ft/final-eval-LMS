@@ -15,6 +15,18 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-man_pendingComponent
+import { man_pendingComponent } from '../components/manager/man_pending.component';
+//CORE_REFERENCE_IMPORT-emp_pendingComponent
+import { emp_pendingComponent } from '../components/employee/emp_pending.component';
+//CORE_REFERENCE_IMPORT-approve_denyComponent
+import { approve_denyComponent } from '../components/manager/approve_deny.component';
+//CORE_REFERENCE_IMPORT-auth_guardService
+import { auth_guardService } from '../services/auth_guard/auth_guard.service';
+//CORE_REFERENCE_IMPORT-man_guardService
+import { man_guardService } from '../services/man_guard/man_guard.service';
+//CORE_REFERENCE_IMPORT-emp_guardService
+import { emp_guardService } from '../services/emp_guard/emp_guard.service';
 //CORE_REFERENCE_IMPORT-emp_available_daysComponent
 import { emp_available_daysComponent } from '../components/employee/emp_available_days.component';
 //CORE_REFERENCE_IMPORT-man_date_pickerComponent
@@ -69,6 +81,12 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-man_pendingComponent
+  man_pendingComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-emp_pendingComponent
+  emp_pendingComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-approve_denyComponent
+  approve_denyComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-emp_available_daysComponent
   emp_available_daysComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-man_date_pickerComponent
@@ -108,6 +126,12 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-auth_guardService
+  auth_guardService,
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-man_guardService
+  man_guardService,
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-emp_guardService
+  emp_guardService,
 ];
 
 /**
@@ -119,25 +143,42 @@ export const appRoutes = [
   {
     path: 'home',
     component: base_layoutComponent,
+    canActivate: [auth_guardService],
     children: [
-      { path: 'login', component: loginComponent },
-      { path: 'register', component: registerComponent },
-      { path: 'emp', component: emp_landingComponent },
+      {
+        path: 'emp',
+        component: emp_landingComponent,
+        canActivate: [emp_guardService],
+      },
       {
         path: 'man',
         component: man_landingComponent,
+        canActivate: [man_guardService],
         children: [
           { path: 'new', component: submit_new_requestComponent },
           { path: 'view', component: veiw_requestsComponent },
           { path: 'options', component: man_optionsComponent },
         ],
       },
-      { path: 'emp-date', component: emp_date_pickerComponent },
+      {
+        path: 'emp-date',
+        component: emp_date_pickerComponent,
+        canActivate: [emp_guardService],
+      },
+      {
+        path: 'emp-available',
+        component: emp_available_daysComponent,
+        canActivate: [emp_guardService],
+      },
+      { path: 'app-deny', component: approve_denyComponent },
       { path: 'man-date', component: man_date_pickerComponent },
-      { path: 'emp-available', component: emp_available_daysComponent },
+      { path: 'emp-pending', component: emp_pendingComponent },
+      { path: 'man-pending', component: man_pendingComponent },
     ],
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'login', component: loginComponent },
+  { path: 'register', component: registerComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

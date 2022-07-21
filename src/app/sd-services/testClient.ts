@@ -37,23 +37,32 @@ export class testClient {
 
   //   service flows_testClient
 
-  async sd_rAxC2XUmdYGxqowX(...others) {
+  async dynamicApiCall(
+    path = '',
+    body: any = undefined,
+    method = '',
+    ...others
+  ) {
     try {
       var bh: any = {
-        input: {},
+        input: {
+          path: path,
+          body: body,
+          method: method,
+        },
         local: {
-          clientResult: undefined,
+          results: undefined,
         },
       };
       bh = this.sdService.__constructDefault(bh);
-      bh = await this.sd_vDgdejx9122Twjky(bh);
-      //appendnew_next_sd_rAxC2XUmdYGxqowX
+      bh = await this.sd_diuouFSm7NZxrdM8(bh);
+      //appendnew_next_dynamicApiCall
       return (
         // formatting output variables
         {
           input: {},
           local: {
-            clientResult: bh.local.clientResult,
+            results: bh.local.results,
           },
         }
       );
@@ -62,23 +71,91 @@ export class testClient {
     }
   }
 
+  async logout(...others) {
+    try {
+      var bh: any = {
+        input: {},
+        local: {},
+      };
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_maiDdo8G4hqz5bz2(bh);
+      //appendnew_next_logout
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {},
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_PqPmMKp9iu1v6DXL');
+    }
+  }
+
   //appendnew_flow_testClient_start
+
+  async sd_diuouFSm7NZxrdM8(bh) {
+    try {
+      bh.ssdUrl = bh.system.environment.properties.ssdURL;
+      bh = await this.createUrl(bh);
+      //appendnew_next_sd_diuouFSm7NZxrdM8
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_diuouFSm7NZxrdM8');
+    }
+  }
+
+  async createUrl(bh) {
+    try {
+      bh.input.url = bh.ssdUrl + bh.input.path;
+      bh = await this.sd_vDgdejx9122Twjky(bh);
+      //appendnew_next_createUrl
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_8t83vBQ7BXpRk4f3');
+    }
+  }
 
   async sd_vDgdejx9122Twjky(bh) {
     try {
       let requestOptions = {
-        url: 'http://localhost:8081/api/getUsers',
-        method: 'get',
+        url: bh.input.url,
+        method: bh.input.method,
         responseType: 'json',
         headers: {},
         params: {},
-        body: undefined,
+        body: bh.input.body,
       };
-      bh.local.clientResult = await this.sdService.nHttpRequest(requestOptions);
+      bh.local.results = await this.sdService.nHttpRequest(requestOptions);
       //appendnew_next_sd_vDgdejx9122Twjky
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_vDgdejx9122Twjky');
+    }
+  }
+
+  async sd_maiDdo8G4hqz5bz2(bh) {
+    try {
+      sessionStorage.clear();
+      bh = await this.sd_aZybkWAJ3zW2gY50(bh);
+      //appendnew_next_sd_maiDdo8G4hqz5bz2
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_maiDdo8G4hqz5bz2');
+    }
+  }
+
+  async sd_aZybkWAJ3zW2gY50(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/login');
+      await this.router.navigate([
+        this.sdService.formatPathWithParams(path, undefined),
+      ]);
+      //appendnew_next_sd_aZybkWAJ3zW2gY50
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_aZybkWAJ3zW2gY50');
     }
   }
 

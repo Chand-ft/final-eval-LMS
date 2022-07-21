@@ -19,6 +19,9 @@ import {
   Validators,
   ValidationErrors,
 } from '@angular/forms'; //_splitter_
+import { testClient } from 'app/sd-services/testClient'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -88,7 +91,8 @@ export class emp_date_pickerComponent {
       this.page.dateOfBirth = undefined;
       this.page.leaveTypes = undefined;
       this.page.showExpandOnSpecialLeave = false;
-      bh = this.sd_IHV6Sz4X4tZNCBKM(bh);
+      this.page.currentUser = {};
+      bh = this.sd_RbxFkgHvbmRtvIx2(bh);
       //appendnew_next_sd_InhKQBmmZ7aQngZp
       return bh;
     } catch (e) {
@@ -96,14 +100,14 @@ export class emp_date_pickerComponent {
     }
   }
 
-  sd_IHV6Sz4X4tZNCBKM(bh) {
+  sd_RbxFkgHvbmRtvIx2(bh) {
     try {
       this.page.FG = FormGroup;
       bh = this.sd_JcWeQLPegslL7CtY(bh);
-      //appendnew_next_sd_IHV6Sz4X4tZNCBKM
+      //appendnew_next_sd_RbxFkgHvbmRtvIx2
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_IHV6Sz4X4tZNCBKM');
+      return this.errorHandler(bh, e, 'sd_RbxFkgHvbmRtvIx2');
     }
   }
 
@@ -135,6 +139,7 @@ export class emp_date_pickerComponent {
         { leaveType: 'Maternity' },
         { leaveType: 'Special' },
       ];
+      bh = this.getUserLocally(bh);
       //appendnew_next_sd_6UXqYU0a8YcPaN2S
       return bh;
     } catch (e) {
@@ -142,17 +147,84 @@ export class emp_date_pickerComponent {
     }
   }
 
+  getUserLocally(bh) {
+    try {
+      this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+      //appendnew_next_getUserLocally
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_dqnY4eqAC7lpyRYz');
+    }
+  }
+
   sd_esNl6hQ7tmSXjqrC(bh) {
     try {
       const page = this.page;
       console.log('form', page.dateOfBirth);
+      // console.log("type",page.dateOfBirth.controls.leaveType.value);
+      // page.dateOfBirth
 
-      console.log('type', page.dateOfBirth.controls.leaveType.value);
+      bh.input.path = 'storeLeaveRequest';
+      bh.input.method = 'Post';
+      page.dateOfBirth.value.owner = page.currentUser.email;
+      bh.input.body = page.dateOfBirth.value;
 
+      bh = this.sd_f48KjRJ8BayhRXvf(bh);
       //appendnew_next_sd_esNl6hQ7tmSXjqrC
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_esNl6hQ7tmSXjqrC');
+    }
+  }
+
+  async sd_f48KjRJ8BayhRXvf(bh) {
+    try {
+      const testClientInstance: testClient =
+        this.__page_injector__.get(testClient);
+
+      let outputVariables = await testClientInstance.dynamicApiCall(
+        bh.input.path,
+        bh.input.body,
+        bh.input.method
+      );
+
+      bh = this.sd_gOsYmt81v9Wc0DfG(bh);
+      //appendnew_next_sd_f48KjRJ8BayhRXvf
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_f48KjRJ8BayhRXvf');
+    }
+  }
+
+  sd_gOsYmt81v9Wc0DfG(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('Successfully submitted', '', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      bh = this.sd_7AflfA0ODoLxPUna(bh);
+      //appendnew_next_sd_gOsYmt81v9Wc0DfG
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_gOsYmt81v9Wc0DfG');
+    }
+  }
+
+  async sd_7AflfA0ODoLxPUna(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home/emp');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_7AflfA0ODoLxPUna
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_7AflfA0ODoLxPUna');
     }
   }
 
