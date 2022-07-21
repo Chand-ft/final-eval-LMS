@@ -1,0 +1,193 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+
+// Standard styles
+body,
+p,
+button,
+table,
+.mat-card-title,
+.mat-list-item-content,
+input,
+textarea,
+.mat-form-field,
+.mat-card,
+.mat-content,
+.mat-expansion-panel-body,
+.mat-expansion-panel-content,
+.mat-form-field-label,
+.mat-radio-label-content,
+.mat-tab-label-content,
+.mat-select-value-text,
+.mat-horizontal-stepper-content,
+.mat-tab-group,
+.mat-checkbox-label,
+.mat-simple-snackbar,
+.mat-option-text {
+    font-family: 'Halis R', sans-serif !important;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0%;
+}
+.fullWidth{
+    width: 100%;
+}
+.fullHeight{
+    height:100%
+}
+.marginTop20{
+    margin-top: 20px;
+}
+.marginBottom20{
+    margin-bottom: 20px;
+}
+.marginTop30{
+    margin-top: 30px;
+}
+.marginBottom30{
+    margin-bottom: 30px;
+}
+.marginTop10{
+    margin-top: 10px;
+}
+.marginBottom10{
+    margin-bottom: 10px;
+}
+.marginTop100{
+    margin-top: 100px;
+}
+.marginBottom50{
+    margin-bottom:50px ;
+    }
+.marginTop50{
+    margin-top: 50px;
+}
+.marginBottom100{
+    margin-bottom:100px ;
+}
+.marginLeft20{
+    margin-left: 20px;
+}
+.marginRight20{
+    margin-right: 20px;
+}
+.scrollVertical{
+    overflow-y: auto;
+}
+// Standard styles
+
+// Pages
+bh-base_layout{
+    width: 100%;
+    height: 100%;
+    .baseLayoutBodyScroll{
+        height: calc(100vh - 320px);
+        overflow-y: auto;
+    } 
+}
+bh-login,bh-register{
+    width: 100%;
+    height: 100%;
+}
+bh-emp_landing, emp_date_picker,emp_available_days{
+    width: 100%;
+    height: 100%;
+    .mat-icon{
+        width: fit-content;
+        height: fit-content;
+    } 
+}
+
+bh-submit_new_request,bh-man_landing, man_date_picker,bh-veiw_requests,bh-man_options{
+    width: 100% !important;
+    height: 100% !important;
+    .mat-icon{
+        width: fit-content;
+        height: fit-content;
+    } 
+}
+// Global 
+.fitContent{
+    height: fit-content;
+    width: fit-content;
+}
+.loginRegHeading{
+    font-size: 23px;
+    font-weight: bold;
+}
+.loginRegSmallText1{
+    font-weight: 600;
+    font-size: 15px;
+    color: black;
+}
+.loginRegSmallText2{
+    font-weight: 600;
+    font-size: 15px;
+    color: gray;
+}
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 1.25em;
+    width: 350px;
+    color: grey;
+    .mat-input-element {
+    caret-color: grey;
+}
+}
+.redButton{
+    background-color: #c91825;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    width: 280px;
+    height: 40px;
+}
+.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-icon {
+    width: 1em;
+    color: gray;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+.pointerCursor{
+    cursor: pointer;
+}
+.userIcon{
+    font-size: 75px;
+    color: #c91825;
+}
+ .whiteBox {
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 1px solid transparent;
+    margin-bottom: 20px;
+    cursor: pointer;
+    .whiteBoxIcon{
+        font-size: 35px;
+        color: #c91825;
+    }
+    .whiteBoxText{
+        font-size: 10pxpx;
+    }
+    
+}
+.backButton{
+    background-color: #c91825;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100px;
+    height: 35px;
+
+}
+.navBar{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.availableDaysText{
+    font-size: 31px;
+    font-weight: bold;
+    text-align: center;
+}
+

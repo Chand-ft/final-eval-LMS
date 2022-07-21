@@ -1,0 +1,35 @@
+<div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/logoSmall.png" class="fullWidth"></div>
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" class="marginBottom30 fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div>
+            <p class="loginRegHeading">Login or register</p>
+          </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+          <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput type="email" placeholder="Your email address" [required]="false">
+            <mat-icon matSuffix>mail</mat-icon>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+          <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="Password" [required]="false">
+            <mat-icon matSuffix>lock</mat-icon>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row wrap" class="marginTop30" fxLayoutAlign="center stretch" [fxShow]="true"><button mat-button class="redButton">LOGIN</button></div>
+        <div fxLayout="row wrap" class="marginTop20" fxLayoutGap="15px" fxLayoutAlign="center stretch" [fxShow]="true">
+          <div routerLink="/home/register" class="pointerCursor">
+            <p class="loginRegSmallText1">Or register</p>
+          </div>
+          <div class="pointerCursor">
+            <p class="loginRegSmallText2">Forgot you password?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
