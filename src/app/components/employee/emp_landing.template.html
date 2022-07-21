@@ -1,4 +1,4 @@
-<div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+<div fxLayout="row wrap" class="redBorders fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
   <div fxLayout="column wrap" class="fullvh" fxFlex="90" fxLayoutAlign="space-between stretch" [fxShow]="true">
     <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -10,7 +10,7 @@
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
               <div>
-                <p class="loginRegHeading">{{page.currentUser.empId}}</p>
+                <p class="loginRegHeading">{{page.currentUser.name}}</p>
               </div>
             </div>
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -18,6 +18,11 @@
                 <p class="loginRegHeading">{{page.currentUser.role}}</p>
               </div>
             </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.objValues">
+          <div fxFlex="100">
+            <canvas baseChart [datasets]="page.objValues" [labels]="page.objKeys" chartType="pie"></canvas>
           </div>
         </div>
         <div fxLayout="row wrap" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/emp-date">
@@ -46,7 +51,7 @@
         </div>
       </div>
     </div>
-    <div fxLayout="row wrap" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" (click)="logout()">
+    <div fxLayout="row wrap" style="    margin-bottom: 80px;" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" (click)="logout()">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
         <mat-icon class="whiteBoxIcon" color="red">exit_to_app</mat-icon>
       </div>

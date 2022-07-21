@@ -1,4 +1,4 @@
-<div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+<div fxLayout="row wrap" class="redBorders fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
   <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center stretch" [fxShow]="true">
     <div fxLayout="row wrap" style="height:70px;" class="marginBottom30 navBar fullWidth" fxLayoutAlign="space-between center" [fxShow]="true">
       <div fxLayout="column wrap" class="marginLeft20 pointerCursor" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/man/view">
@@ -20,8 +20,8 @@
                 <p class="greyBoxBigText">{{item.owner}}</p>
                 <p class="greyBoxSmallText">Leave type: {{item.leaveType}}</p>
                 <!-- <p class="greyBoxSmallText">Start date: {{i.startDate |Date: mediumDate}}</p> -->
-                <p class="greyBoxSmallText">Start date: {{item.startDate}}</p>
-                <p class="greyBoxSmallText">End date: {{item.endDate}}</p>
+                <p class="greyBoxSmallText">Start date: {{item.startDate | date: &apos;dd/MM/yyyy&apos;}}</p>
+                <p class="greyBoxSmallText">End date: {{item.endDate | date: &apos;dd/MM/yyyy&apos;}}</p>
                 <p class="greyBoxSmallText">Extra Notes: {{item.textArea}}</p>
               </div>
             </div>

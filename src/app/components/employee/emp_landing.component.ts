@@ -80,6 +80,9 @@ export class emp_landingComponent {
   sd_yPvcUA2aCiDQhVW5(bh) {
     try {
       this.page.currentUser = {};
+      this.page.leaveDays = undefined;
+      this.page.objKeys = undefined;
+      this.page.objValues = undefined;
       bh = this.sd_yxq0WcgSzSoaNAg7(bh);
       //appendnew_next_sd_yPvcUA2aCiDQhVW5
       return bh;
@@ -92,6 +95,7 @@ export class emp_landingComponent {
     try {
       this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
       this.sd_hkg2oUMT9nESAd4i(bh);
+      bh = this.sd_QNOfYTt6nzCVkKfh(bh);
       //appendnew_next_sd_yxq0WcgSzSoaNAg7
       return bh;
     } catch (e) {
@@ -106,6 +110,79 @@ export class emp_landingComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_hkg2oUMT9nESAd4i');
+    }
+  }
+
+  sd_QNOfYTt6nzCVkKfh(bh) {
+    try {
+      const page = this.page;
+      bh.input.path = 'getLeaveDays/' + page.currentUser.email;
+      bh.input.method = 'Get';
+      bh.input.body = {
+        owner: page.currentUser.email,
+      };
+
+      bh = this.sd_rvTel57wdVhnguKy(bh);
+      //appendnew_next_sd_QNOfYTt6nzCVkKfh
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_QNOfYTt6nzCVkKfh');
+    }
+  }
+
+  async sd_rvTel57wdVhnguKy(bh) {
+    try {
+      const testClientInstance: testClient =
+        this.__page_injector__.get(testClient);
+
+      let outputVariables = await testClientInstance.dynamicApiCall(
+        bh.input.path,
+        bh.input.body,
+        bh.input.method
+      );
+      this.page.leaveDays = outputVariables.local.results;
+
+      this.sd_2IJPJEmoHMhT9tfN(bh);
+      bh = this.sd_OqMlPI9VOjJSA12W(bh);
+      //appendnew_next_sd_rvTel57wdVhnguKy
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_rvTel57wdVhnguKy');
+    }
+  }
+
+  sd_2IJPJEmoHMhT9tfN(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.leaveDays);
+      //appendnew_next_sd_2IJPJEmoHMhT9tfN
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_2IJPJEmoHMhT9tfN');
+    }
+  }
+
+  sd_OqMlPI9VOjJSA12W(bh) {
+    try {
+      const page = this.page; // console.log(Object.keys("LD" ,page.leaveDays));
+      // console.log("LD" ,page.leaveDays);
+      delete page.leaveDays[0]['_id'];
+      delete page.leaveDays[0]['owner'];
+
+      console.log('keys', Object.keys(page.leaveDays[0]));
+      console.log('values', Object.values(page.leaveDays[0]));
+      page.objValues = Object.values(page.leaveDays[0]);
+      page.objKeys = Object.keys(page.leaveDays[0]);
+
+      page.objValues = [
+        {
+          label: 'Leave Days',
+          data: page.objValues,
+        },
+      ];
+      //appendnew_next_sd_OqMlPI9VOjJSA12W
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_OqMlPI9VOjJSA12W');
     }
   }
 

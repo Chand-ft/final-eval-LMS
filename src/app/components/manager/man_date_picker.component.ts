@@ -130,7 +130,7 @@ export class man_date_pickerComponent {
       page.leaveTypes = [
         { leaveType: 'Sick' },
         { leaveType: 'Annual' },
-        { leaveType: 'Compationate' },
+        { leaveType: 'Compassionate' },
         { leaveType: 'Maternity' },
         { leaveType: 'Special' },
       ];
