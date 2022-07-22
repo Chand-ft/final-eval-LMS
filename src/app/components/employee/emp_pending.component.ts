@@ -67,6 +67,10 @@ export class emp_pendingComponent {
     try {
       this.page.resultFormDB = undefined;
       this.page.requestRetrieved = undefined;
+      this.page.status = '"pending"';
+      this.page.pendingStatus = false;
+      this.page.approvedStatus = false;
+      this.page.rejectedStatus = false;
       bh = this.sd_0Krus0STxl4CiL4g(bh);
       //appendnew_next_sd_cV9OALw8QAEclB95
       return bh;
@@ -102,22 +106,12 @@ export class emp_pendingComponent {
       );
       this.page.resultFormDB = outputVariables.local.results;
 
-      this.sd_b5Yiy3oPXQoz6CRU(bh);
       bh = this.sd_T9YueeRIvbfq5W8V(bh);
+      this.sd_b5Yiy3oPXQoz6CRU(bh);
       //appendnew_next_sd_cCePLY0678ttS3WD
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_cCePLY0678ttS3WD');
-    }
-  }
-
-  sd_b5Yiy3oPXQoz6CRU(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.resultFormDB);
-      //appendnew_next_sd_b5Yiy3oPXQoz6CRU
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_b5Yiy3oPXQoz6CRU');
     }
   }
 
@@ -149,6 +143,7 @@ export class emp_pendingComponent {
       this.page.resultFormDB = outputVariables.local.results;
 
       bh = this.sd_dErLXDqPZrIklbNd(bh);
+      this.sd_3DrjXrnNzH9XvQvN(bh);
       //appendnew_next_sd_L9T4dZgNQDBwTugY
       return bh;
     } catch (e) {
@@ -160,10 +155,32 @@ export class emp_pendingComponent {
     try {
       const page = this.page;
       console.log('yes', page.requestRetrieved);
+      console.log('reslut', page.resultFormDB.status);
+
       //appendnew_next_sd_dErLXDqPZrIklbNd
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_dErLXDqPZrIklbNd');
+    }
+  }
+
+  sd_3DrjXrnNzH9XvQvN(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.requestRetrieved);
+      //appendnew_next_sd_3DrjXrnNzH9XvQvN
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_3DrjXrnNzH9XvQvN');
+    }
+  }
+
+  sd_b5Yiy3oPXQoz6CRU(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.resultFormDB);
+      //appendnew_next_sd_b5Yiy3oPXQoz6CRU
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_b5Yiy3oPXQoz6CRU');
     }
   }
 

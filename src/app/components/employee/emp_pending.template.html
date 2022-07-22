@@ -13,31 +13,31 @@
     </div>
     <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
       <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true">
-        <div fxLayout="row wrap" class="greyBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="row wrap" class="greyBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let item of page.resultFormDB">
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
               <div>
-                <p class="greyBoxBigText">Employee Name</p>
-                <p class="greyBoxSmallText">Start date: </p>
-                <p class="greyBoxSmallText">End date: </p>
+                <p class="greyBoxBigText">{{item.leaveType}}</p>
+                <p class="greyBoxSmallText">Start date: {{item.startDate | date: &apos;dd/MM/yyyy&apos;}}</p>
+                <p class="greyBoxSmallText">End date: {{item.endDate | date: &apos;dd/MM/yyyy&apos;}}</p>
               </div>
             </div>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
             <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true">
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.pendingStatus">
                 <mat-icon class="greyBoxPendingIcon">hourglass_empty</mat-icon>
                 <div>
                   <p class="greyBoxSmallText" style="color: orange;">Pending</p>
                 </div>
               </div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.approvedStatus">
                 <mat-icon class="greyBoxTickIcon">thumb_up</mat-icon>
                 <div>
                   <p class="greyBoxSmallText" style="color: green;">Approved</p>
                 </div>
               </div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.rejectedStatus">
                 <mat-icon class="greyBoxCrossIcon">thumb_down</mat-icon>
                 <div>
                   <p class="greyBoxSmallText" style="color: red;">Rejected</p>
