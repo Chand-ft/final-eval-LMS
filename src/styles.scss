@@ -103,7 +103,7 @@ bh-emp_landing, bh-emp_date_picker,bh-emp_available_days, bh-emp_pending{
     } 
 }
 
-bh-submit_new_request,bh-man_landing, bh-man_date_picker,bh-veiw_requests,bh-man_options,bh-approve_deny{
+bh-submit_new_request,bh-man_landing, bh-man_date_picker,bh-veiw_requests,bh-man_options,bh-approve_deny, bh-man_pending{
     width: 100% !important;
     height: 100% !important;
     .mat-icon{
@@ -233,7 +233,15 @@ input:-webkit-autofill {
     height:100vh
 }
 .redBorders{
-        height: 100%;
+    height: 100vh;
     border-top: solid #c91825 30px;
     border-bottom: solid #c91825 30px;
+}
+.insideRedBorders{
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+}
+.underNavBar{
+    height: calc(100vh - 160px);
+    overflow-y: auto;
 }

@@ -1,53 +1,57 @@
-<div fxLayout="row wrap" class="redBorders fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+<div fxLayout="row wrap" class="insideRedBorders fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
   <form [formGroup]="page.dateOfBirth" class="fullWidth">
-    <div fxLayout="column wrap" class="fullvh" fxFlex="100" fxLayoutAlign="space-between stretch" [fxShow]="true">
-      <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div fxLayout="row wrap" style="height:70px;" class="marginBottom30 navBar fullWidth" fxLayoutAlign="space-between center" [fxShow]="true">
-            <div fxLayout="column wrap" class="marginLeft20 pointerCursor" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/emp">
-              <mat-icon><span class="material-icons-round"> arrow_back_ios </span></mat-icon>
-            </div>
-            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-              <div>
-                <p>Request leave</p>
-              </div>
-            </div>
-            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/logo.png" width="50px"></div>
-          </div>
-          <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
-            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
-              <mat-select formControlName="leaveType" placeholder="Select leave type" [required]="false">
-                <ng-template ngFor let-option [ngForOf]="page.leaveTypes" let-i="index">
-                  <mat-option [value]="option.leaveType">{{option.leaveType}}</mat-option>
-                </ng-template>
-              </mat-select>
-
-            </mat-form-field>
-          </div>
-          <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true" *ngIf="page.dateOfBirth.controls.leaveType.value">
-            <mat-form-field>
-              <textarea matInput formControlName="textArea" placeholder="Please elaborate if neccesary" [required]="false"></textarea>
-            </mat-form-field>
-          </div>
-          <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
-            <mat-form-field [appearance]="&apos;legacy&apos;">
-              <input matInput placeholder="Select start date" [matDatepicker]="picker1" formControlName="startDate" [required]="false" [disabled]="false" readonly="true">
-              <mat-datepicker-toggle matSuffix [for]="picker1" disabled="false"></mat-datepicker-toggle>
-              <mat-datepicker #picker1 [disabled]="false"></mat-datepicker>
-
-            </mat-form-field>
-          </div>
-          <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
-            <mat-form-field [appearance]="&apos;legacy&apos;">
-              <input matInput placeholder="Select end date" [matDatepicker]="picker2" formControlName="endDate" [required]="false" [disabled]="false" readonly="true">
-              <mat-datepicker-toggle matSuffix [for]="picker2" disabled="false"></mat-datepicker-toggle>
-              <mat-datepicker #picker2 [disabled]="false"></mat-datepicker>
-
-            </mat-form-field>
+    <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="height:70px;" class="marginBottom30 navBar fullWidth" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="column wrap" class="marginLeft20 pointerCursor" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/home/emp">
+          <mat-icon><span class="material-icons-round"> arrow_back_ios </span></mat-icon>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div>
+            <p>Request leave</p>
           </div>
         </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/logo.png" width="50px"></div>
       </div>
-      <div fxLayout="row wrap" class="marginBottom80 marginTop30 fullWidth" fxLayoutAlign="center center" [fxShow]="true"><button mat-button class="redButton" (click)="logForm()">SUBMIT</button></div>
+      <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="underNavBar" fxFlex="100" fxLayoutAlign="space-between stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                  <mat-select formControlName="leaveType" placeholder="Select leave type" [required]="false">
+                    <ng-template ngFor let-option [ngForOf]="page.leaveTypes" let-i="index">
+                      <mat-option [value]="option.leaveType">{{option.leaveType}}</mat-option>
+                    </ng-template>
+                  </mat-select>
+
+                </mat-form-field>
+              </div>
+              <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true" *ngIf="page.dateOfBirth.controls.leaveType.value">
+                <mat-form-field>
+                  <textarea matInput formControlName="textArea" placeholder="Please elaborate if neccesary" [required]="false"></textarea>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                <mat-form-field [appearance]="&apos;legacy&apos;">
+                  <input matInput placeholder="Select start date" [matDatepicker]="picker1" formControlName="startDate" [required]="false" [disabled]="false" readonly="true">
+                  <mat-datepicker-toggle matSuffix [for]="picker1" disabled="false"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1 [disabled]="false"></mat-datepicker>
+
+                </mat-form-field>
+              </div>
+              <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                <mat-form-field [appearance]="&apos;legacy&apos;">
+                  <input matInput placeholder="Select end date" [matDatepicker]="picker2" formControlName="endDate" [required]="false" [disabled]="false" readonly="true">
+                  <mat-datepicker-toggle matSuffix [for]="picker2" disabled="false"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2 [disabled]="false"></mat-datepicker>
+
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" class="marginBottom30 marginTop30 fullWidth" fxLayoutAlign="center center" [fxShow]="true"><button mat-button class="redButton" (click)="logForm()">SUBMIT</button></div>
+        </div>
+      </div>
     </div>
   </form>
 </div>

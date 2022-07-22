@@ -4,7 +4,7 @@
       <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
         <div fxLayout="row wrap" class="marginBottom30" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.objValues">
           <div fxFlex="100">
-            <canvas baseChart [datasets]="page.objValues" [labels]="page.objKeys" chartType="pie"></canvas>
+            <canvas baseChart [datasets]="page.objValues" [labels]="page.objKeys" [legend]="true" chartType="pie"></canvas>
           </div>
         </div>
         <div fxLayout="row wrap" class="whiteBox fullWidth" fxLayoutGap="25px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/man-date">

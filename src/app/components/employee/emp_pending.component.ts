@@ -67,7 +67,6 @@ export class emp_pendingComponent {
     try {
       this.page.resultFormDB = undefined;
       this.page.requestRetrieved = undefined;
-      this.page.status = '"pending"';
       this.page.pendingStatus = false;
       this.page.approvedStatus = false;
       this.page.rejectedStatus = false;
