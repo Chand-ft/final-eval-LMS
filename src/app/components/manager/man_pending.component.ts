@@ -70,7 +70,7 @@ export class man_pendingComponent {
       this.page.pendingStatus = false;
       this.page.approvedStatus = false;
       this.page.rejectedStatus = false;
-      bh = this.sd_5xqJSLoLR2mW5ht1(bh);
+      bh = this.getUserLocally(bh);
       //appendnew_next_sd_z6zfJOWraeWrUKFy
       return bh;
     } catch (e) {
@@ -78,18 +78,28 @@ export class man_pendingComponent {
     }
   }
 
-  sd_5xqJSLoLR2mW5ht1(bh) {
+  getUserLocally(bh) {
+    try {
+      this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+      bh = this.sd_R0ZeEURGHB6aAC0I(bh);
+      //appendnew_next_getUserLocally
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_oUVZYnwopaeJeE2M');
+    }
+  }
+
+  sd_R0ZeEURGHB6aAC0I(bh) {
     try {
       const page = this.page;
       bh.input.path = 'getLeaveRequests';
-      bh.input.method = 'Get';
-      bh.input.body = {};
-
+      bh.input.method = 'POST';
+      bh.input.body = { email: page.currentUser.email };
       bh = this.sd_Ul1PVgSGjDPQjzhk(bh);
-      //appendnew_next_sd_5xqJSLoLR2mW5ht1
+      //appendnew_next_sd_R0ZeEURGHB6aAC0I
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_5xqJSLoLR2mW5ht1');
+      return this.errorHandler(bh, e, 'sd_R0ZeEURGHB6aAC0I');
     }
   }
 
@@ -106,7 +116,6 @@ export class man_pendingComponent {
       this.page.resultFormDB = outputVariables.local.results;
 
       this.sd_4Pd0gTTbIkvibI1P(bh);
-      bh = this.sd_56lR1didSOBSZ6PB(bh);
       //appendnew_next_sd_Ul1PVgSGjDPQjzhk
       return bh;
     } catch (e) {
@@ -121,65 +130,6 @@ export class man_pendingComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_4Pd0gTTbIkvibI1P');
-    }
-  }
-
-  sd_56lR1didSOBSZ6PB(bh) {
-    try {
-      const page = this.page;
-      bh.input.path = 'getLeaveRequests';
-      bh.input.method = 'Get';
-      bh.input.body = {};
-
-      bh = this.sd_7237ah7FkuMEILCI(bh);
-      //appendnew_next_sd_56lR1didSOBSZ6PB
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_56lR1didSOBSZ6PB');
-    }
-  }
-
-  async sd_7237ah7FkuMEILCI(bh) {
-    try {
-      const testClientInstance: testClient =
-        this.__page_injector__.get(testClient);
-
-      let outputVariables = await testClientInstance.dynamicApiCall(
-        bh.input.path,
-        bh.input.body,
-        bh.input.method
-      );
-      this.page.resultFormDB = outputVariables.local.results;
-
-      bh = this.sd_JQbo66jRRQDHWZOQ(bh);
-      this.sd_iXE9mEgPfRkMyYkC(bh);
-      //appendnew_next_sd_7237ah7FkuMEILCI
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_7237ah7FkuMEILCI');
-    }
-  }
-
-  sd_JQbo66jRRQDHWZOQ(bh) {
-    try {
-      const page = this.page;
-      console.log('yes', page.requestRetrieved);
-      console.log('reslut', page.resultFormDB.status);
-
-      //appendnew_next_sd_JQbo66jRRQDHWZOQ
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_JQbo66jRRQDHWZOQ');
-    }
-  }
-
-  sd_iXE9mEgPfRkMyYkC(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.requestRetrieved);
-      //appendnew_next_sd_iXE9mEgPfRkMyYkC
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_iXE9mEgPfRkMyYkC');
     }
   }
 

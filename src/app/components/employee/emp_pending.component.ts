@@ -70,7 +70,8 @@ export class emp_pendingComponent {
       this.page.pendingStatus = false;
       this.page.approvedStatus = false;
       this.page.rejectedStatus = false;
-      bh = this.sd_0Krus0STxl4CiL4g(bh);
+      this.page.currentUser = undefined;
+      bh = this.getUserLocally(bh);
       //appendnew_next_sd_cV9OALw8QAEclB95
       return bh;
     } catch (e) {
@@ -78,48 +79,23 @@ export class emp_pendingComponent {
     }
   }
 
-  sd_0Krus0STxl4CiL4g(bh) {
+  getUserLocally(bh) {
     try {
-      const page = this.page;
-      bh.input.path = 'getLeaveRequests';
-      bh.input.method = 'Get';
-      bh.input.body = {};
-
-      bh = this.sd_cCePLY0678ttS3WD(bh);
-      //appendnew_next_sd_0Krus0STxl4CiL4g
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_0Krus0STxl4CiL4g');
-    }
-  }
-
-  async sd_cCePLY0678ttS3WD(bh) {
-    try {
-      const testClientInstance: testClient =
-        this.__page_injector__.get(testClient);
-
-      let outputVariables = await testClientInstance.dynamicApiCall(
-        bh.input.path,
-        bh.input.body,
-        bh.input.method
-      );
-      this.page.resultFormDB = outputVariables.local.results;
-
+      this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
       bh = this.sd_T9YueeRIvbfq5W8V(bh);
-      this.sd_b5Yiy3oPXQoz6CRU(bh);
-      //appendnew_next_sd_cCePLY0678ttS3WD
+      //appendnew_next_getUserLocally
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_cCePLY0678ttS3WD');
+      return this.errorHandler(bh, e, 'sd_1btyUH41RgxQ9T6X');
     }
   }
 
   sd_T9YueeRIvbfq5W8V(bh) {
     try {
       const page = this.page;
-      bh.input.path = 'getLeaveRequests';
-      bh.input.method = 'Get';
-      bh.input.body = {};
+      bh.input.path = 'getPendingRequests';
+      bh.input.method = 'POST';
+      bh.input.body = { email: page.currentUser.email };
 
       bh = this.sd_L9T4dZgNQDBwTugY(bh);
       //appendnew_next_sd_T9YueeRIvbfq5W8V
@@ -170,16 +146,6 @@ export class emp_pendingComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_3DrjXrnNzH9XvQvN');
-    }
-  }
-
-  sd_b5Yiy3oPXQoz6CRU(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.resultFormDB);
-      //appendnew_next_sd_b5Yiy3oPXQoz6CRU
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_b5Yiy3oPXQoz6CRU');
     }
   }
 

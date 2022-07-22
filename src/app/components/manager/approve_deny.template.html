@@ -29,10 +29,10 @@
           <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
             <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true">
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <mat-icon class="pointerCursor greyBoxTickIcon">check</mat-icon>
+                <mat-icon class="pointerCursor greyBoxTickIcon" (click)="respondToLeave(&apos;approved&apos;,item)">check</mat-icon>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <mat-icon class="pointerCursor greyBoxCrossIcon">clear</mat-icon>
+                <mat-icon class="pointerCursor greyBoxCrossIcon" (click)="respondToLeave(&apos;rejected&apos;,item)">clear</mat-icon>
               </div>
             </div>
           </div>

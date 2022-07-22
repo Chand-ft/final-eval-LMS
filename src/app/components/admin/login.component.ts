@@ -206,7 +206,9 @@ export class loginComponent {
         this.sdService.getPathAndQParamsObj('/home/man/options');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_manager
       return bh;
     } catch (e) {
@@ -220,7 +222,9 @@ export class loginComponent {
         this.sdService.getPathAndQParamsObj('/home/emp');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_employee
       return bh;
     } catch (e) {

@@ -119,7 +119,7 @@ export class emp_landingComponent {
       bh.input.path = 'getLeaveDays/' + page.currentUser.email;
       bh.input.method = 'Get';
       bh.input.body = {
-        owner: page.currentUser.email,
+        email: page.currentUser.email,
       };
 
       bh = this.sd_rvTel57wdVhnguKy(bh);

@@ -61,15 +61,16 @@ export class approve_denyComponent {
     }
   }
 
-  sd_usHSgtOawfXSZIos(...others) {
+  respondToLeave(response = '', obj: any = undefined, ...others) {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh.input = {};
-      bh.local = {};
+      bh.input = { response: response, obj: obj };
+      bh.local = { result: undefined };
       bh = this.sd_SubterjrPZ8hRHsj(bh);
-      //appendnew_next_sd_usHSgtOawfXSZIos
+      //appendnew_next_respondToLeave
+      return bh.local.result;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_usHSgtOawfXSZIos');
     }
@@ -96,7 +97,8 @@ export class approve_denyComponent {
       this.page.resultFormDB = undefined;
       this.page.managerAppoved = false;
       this.page.managerDenied = false;
-      bh = this.sd_Us3LxJsCzzi43Yn0(bh);
+      this.page.currentUser = undefined;
+      bh = this.getUserLocally(bh);
       //appendnew_next_sd_VqP5yIWqlsnNbPuY
       return bh;
     } catch (e) {
@@ -104,13 +106,23 @@ export class approve_denyComponent {
     }
   }
 
+  getUserLocally(bh) {
+    try {
+      this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+      bh = this.sd_Us3LxJsCzzi43Yn0(bh);
+      //appendnew_next_getUserLocally
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_j38hbgVmn9oMcwYn');
+    }
+  }
+
   sd_Us3LxJsCzzi43Yn0(bh) {
     try {
       const page = this.page;
       bh.input.path = 'getLeaveRequests';
-      bh.input.method = 'Get';
-      bh.input.body = {};
-
+      bh.input.method = 'POST';
+      bh.input.body = { email: page.currentUser.email };
       bh = this.sd_At1DwVxAvjL9kqXM(bh);
       //appendnew_next_sd_Us3LxJsCzzi43Yn0
       return bh;
@@ -142,7 +154,7 @@ export class approve_denyComponent {
 
   sd_ig1LpOwW2ZexYIqy(bh) {
     try {
-      console.log(new Date().toLocaleTimeString(), this.page.resultFormDB);
+      console.log(new Date().toLocaleTimeString(), this.page.currentUser);
       //appendnew_next_sd_ig1LpOwW2ZexYIqy
       return bh;
     } catch (e) {
@@ -163,10 +175,38 @@ export class approve_denyComponent {
 
   sd_SubterjrPZ8hRHsj(bh) {
     try {
+      const page = this.page;
+      bh.input.obj.status = bh.input.response;
+
+      bh.input.path = 'updateLeaveRequest';
+      bh.input.method = 'POST';
+      bh.input.body = bh.input.obj;
+      console.log(bh.input);
+
+      bh = this.sd_Ac0n2VknS29F7mVr(bh);
       //appendnew_next_sd_SubterjrPZ8hRHsj
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SubterjrPZ8hRHsj');
+    }
+  }
+
+  async sd_Ac0n2VknS29F7mVr(bh) {
+    try {
+      const testClientInstance: testClient =
+        this.__page_injector__.get(testClient);
+
+      let outputVariables = await testClientInstance.dynamicApiCall(
+        bh.input.path,
+        bh.input.body,
+        bh.input.method
+      );
+      this.page.resultFormDB = outputVariables.local.results;
+
+      //appendnew_next_sd_Ac0n2VknS29F7mVr
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Ac0n2VknS29F7mVr');
     }
   }
 

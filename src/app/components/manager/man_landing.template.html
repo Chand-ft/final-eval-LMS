@@ -1,26 +1,30 @@
-<div fxLayout="row wrap" class="redBorders fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+<div fxLayout="row wrap" class="insideRedBorders fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
   <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true">
     <div fxLayout="row wrap" class="marginBottom30 marginTop30" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/logo.png" class="fullWidth"></div>
-    <div fxLayout="row wrap" style="height:75px" class="marginBottom30 fullWidth" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <mat-icon class="userIcon" color="red">account_circle</mat-icon>
-      </div>
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div>
-            <p class="loginRegHeading">{{page.currentUser.name}}</p>
+    <div fxLayout="row wrap" class="underLogoSmall fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="height:75px" class="underLogoSmall marginBottom30 fullWidth" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-icon class="userIcon" color="red">account_circle</mat-icon>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div>
+                <p class="loginRegHeading">{{page.currentUser.name}}</p>
+              </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div>
+                <p class="loginRegHeading">{{page.currentUser.role}}</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div>
-            <p class="loginRegHeading">{{page.currentUser.role}}</p>
+        <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <router-outlet></router-outlet>
           </div>
         </div>
-      </div>
-    </div>
-    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <router-outlet></router-outlet>
       </div>
     </div>
   </div>

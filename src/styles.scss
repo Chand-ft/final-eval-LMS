@@ -239,9 +239,13 @@ input:-webkit-autofill {
 }
 .insideRedBorders{
     height: calc(100vh - 60px);
-    overflow-y: auto;
+    // overflow-y: auto;
 }
 .underNavBar{
     height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+.underLogoSmall{
+    height: calc(100vh - 290px);
     overflow-y: auto;
 }
