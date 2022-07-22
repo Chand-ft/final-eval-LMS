@@ -119,6 +119,7 @@ export class emp_date_pickerComponent {
         endDate: new FormControl('', [Validators.required]),
         leaveType: new FormControl('', [Validators.required]),
         textArea: new FormControl(''),
+        status: new FormControl('pending'),
       });
 
       bh = this.sd_6UXqYU0a8YcPaN2S(bh);
@@ -136,7 +137,6 @@ export class emp_date_pickerComponent {
         { leaveType: 'Sick' },
         { leaveType: 'Annual' },
         { leaveType: 'Compationate' },
-        { leaveType: 'Maternity' },
         { leaveType: 'Special' },
       ];
       bh = this.getUserLocally(bh);
@@ -159,15 +159,16 @@ export class emp_date_pickerComponent {
 
   sd_esNl6hQ7tmSXjqrC(bh) {
     try {
-      const page = this.page;
-      console.log('form', page.dateOfBirth);
-      // console.log("type",page.dateOfBirth.controls.leaveType.value);
+      const page = this.page; // console.log("type",page.dateOfBirth.controls.leaveType.value);
       // page.dateOfBirth
 
       bh.input.path = 'storeLeaveRequest';
       bh.input.method = 'Post';
       page.dateOfBirth.value.owner = page.currentUser.email;
       bh.input.body = page.dateOfBirth.value;
+
+      console.log('form', page.dateOfBirth);
+      console.log('value', page.dateOfBirth.value);
 
       bh = this.sd_f48KjRJ8BayhRXvf(bh);
       //appendnew_next_sd_esNl6hQ7tmSXjqrC

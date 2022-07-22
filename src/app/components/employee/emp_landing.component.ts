@@ -173,6 +173,12 @@ export class emp_landingComponent {
       page.objValues = Object.values(page.leaveDays[0]);
       page.objKeys = Object.keys(page.leaveDays[0]);
 
+      page.objKeys = [
+        'Sick leave',
+        'Annual leave',
+        'Compassionate leave',
+        'Special leave',
+      ];
       page.objValues = [
         {
           label: 'Leave Days',

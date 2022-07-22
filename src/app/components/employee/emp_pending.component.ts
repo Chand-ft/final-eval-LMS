@@ -66,6 +66,7 @@ export class emp_pendingComponent {
   sd_cV9OALw8QAEclB95(bh) {
     try {
       this.page.resultFormDB = undefined;
+      this.page.requestRetrieved = undefined;
       bh = this.sd_0Krus0STxl4CiL4g(bh);
       //appendnew_next_sd_cV9OALw8QAEclB95
       return bh;
@@ -102,6 +103,7 @@ export class emp_pendingComponent {
       this.page.resultFormDB = outputVariables.local.results;
 
       this.sd_b5Yiy3oPXQoz6CRU(bh);
+      bh = this.sd_T9YueeRIvbfq5W8V(bh);
       //appendnew_next_sd_cCePLY0678ttS3WD
       return bh;
     } catch (e) {
@@ -116,6 +118,52 @@ export class emp_pendingComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_b5Yiy3oPXQoz6CRU');
+    }
+  }
+
+  sd_T9YueeRIvbfq5W8V(bh) {
+    try {
+      const page = this.page;
+      bh.input.path = 'getLeaveRequests';
+      bh.input.method = 'Get';
+      bh.input.body = {};
+
+      bh = this.sd_L9T4dZgNQDBwTugY(bh);
+      //appendnew_next_sd_T9YueeRIvbfq5W8V
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_T9YueeRIvbfq5W8V');
+    }
+  }
+
+  async sd_L9T4dZgNQDBwTugY(bh) {
+    try {
+      const testClientInstance: testClient =
+        this.__page_injector__.get(testClient);
+
+      let outputVariables = await testClientInstance.dynamicApiCall(
+        bh.input.path,
+        bh.input.body,
+        bh.input.method
+      );
+      this.page.resultFormDB = outputVariables.local.results;
+
+      bh = this.sd_dErLXDqPZrIklbNd(bh);
+      //appendnew_next_sd_L9T4dZgNQDBwTugY
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_L9T4dZgNQDBwTugY');
+    }
+  }
+
+  sd_dErLXDqPZrIklbNd(bh) {
+    try {
+      const page = this.page;
+      console.log('yes', page.requestRetrieved);
+      //appendnew_next_sd_dErLXDqPZrIklbNd
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_dErLXDqPZrIklbNd');
     }
   }
 

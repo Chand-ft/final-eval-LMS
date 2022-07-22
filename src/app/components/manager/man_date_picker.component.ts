@@ -131,7 +131,6 @@ export class man_date_pickerComponent {
         { leaveType: 'Sick' },
         { leaveType: 'Annual' },
         { leaveType: 'Compassionate' },
-        { leaveType: 'Maternity' },
         { leaveType: 'Special' },
       ];
       //appendnew_next_sd_PRJPz22SNaqwB4td
@@ -145,7 +144,6 @@ export class man_date_pickerComponent {
     try {
       const page = this.page;
       console.log('form', page.dateOfBirth);
-
       console.log('type', page.dateOfBirth.controls.leaveType.value);
 
       //appendnew_next_sd_PHIYvYUevmEqNPiK

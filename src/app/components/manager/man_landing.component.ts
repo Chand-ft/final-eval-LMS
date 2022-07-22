@@ -13,6 +13,7 @@ import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
+import { testClient } from 'app/sd-services/testClient'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -135,6 +136,7 @@ export class man_landingComponent {
     try {
       this.page.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
       this.sd_DOu631CMcoRHGRrS(bh);
+      bh = this.sd_0uOyfDDmymSPvTTK(bh);
       //appendnew_next_storeUserLocally
       return bh;
     } catch (e) {
@@ -149,6 +151,85 @@ export class man_landingComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_DOu631CMcoRHGRrS');
+    }
+  }
+
+  sd_0uOyfDDmymSPvTTK(bh) {
+    try {
+      const page = this.page;
+      bh.input.path = 'getLeaveDays/' + page.currentUser.email;
+      bh.input.method = 'Get';
+      bh.input.body = {
+        owner: page.currentUser.email,
+      };
+
+      bh = this.sd_jMuOLG6veZMWzIcW(bh);
+      //appendnew_next_sd_0uOyfDDmymSPvTTK
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_0uOyfDDmymSPvTTK');
+    }
+  }
+
+  async sd_jMuOLG6veZMWzIcW(bh) {
+    try {
+      const testClientInstance: testClient =
+        this.__page_injector__.get(testClient);
+
+      let outputVariables = await testClientInstance.dynamicApiCall(
+        bh.input.path,
+        bh.input.body,
+        bh.input.method
+      );
+      this.page.leaveDays = outputVariables.local.results;
+
+      this.sd_4DYArhfpp7LRP4y1(bh);
+      bh = this.sd_oPGJDI3JpK6g36kC(bh);
+      //appendnew_next_sd_jMuOLG6veZMWzIcW
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_jMuOLG6veZMWzIcW');
+    }
+  }
+
+  sd_4DYArhfpp7LRP4y1(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.leaveDays);
+      //appendnew_next_sd_4DYArhfpp7LRP4y1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_4DYArhfpp7LRP4y1');
+    }
+  }
+
+  sd_oPGJDI3JpK6g36kC(bh) {
+    try {
+      const page = this.page; // console.log(Object.keys("LD" ,page.leaveDays));
+      // console.log("LD" ,page.leaveDays);
+      delete page.leaveDays[0]['_id'];
+      delete page.leaveDays[0]['owner'];
+
+      console.log('keys', Object.keys(page.leaveDays[0]));
+      console.log('values', Object.values(page.leaveDays[0]));
+      page.objValues = Object.values(page.leaveDays[0]);
+      page.objKeys = Object.keys(page.leaveDays[0]);
+
+      page.objKeys = [
+        'Sick leave',
+        'Annual leave',
+        'Compassionate leave',
+        'Special leave',
+      ];
+      page.objValues = [
+        {
+          label: 'Leave Days',
+          data: page.objValues,
+        },
+      ];
+      //appendnew_next_sd_oPGJDI3JpK6g36kC
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_oPGJDI3JpK6g36kC');
     }
   }
 

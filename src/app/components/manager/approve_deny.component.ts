@@ -132,6 +132,7 @@ export class approve_denyComponent {
       this.page.resultFormDB = outputVariables.local.results;
 
       this.sd_ig1LpOwW2ZexYIqy(bh);
+      bh = this.sd_HvSJliMhhx2FJJTJ(bh);
       //appendnew_next_sd_At1DwVxAvjL9kqXM
       return bh;
     } catch (e) {
@@ -146,6 +147,17 @@ export class approve_denyComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ig1LpOwW2ZexYIqy');
+    }
+  }
+
+  sd_HvSJliMhhx2FJJTJ(bh) {
+    try {
+      const page = this.page;
+      console.log('owner', page.resultFormDB[0].owner);
+      //appendnew_next_sd_HvSJliMhhx2FJJTJ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_HvSJliMhhx2FJJTJ');
     }
   }
 

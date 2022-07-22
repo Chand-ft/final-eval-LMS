@@ -20,7 +20,7 @@
             </div>
           </div>
         </div>
-        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.objValues">
+        <div fxLayout="row wrap" class="marginBottom30" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.objValues">
           <div fxFlex="100">
             <canvas baseChart [datasets]="page.objValues" [labels]="page.objKeys" chartType="pie"></canvas>
           </div>
