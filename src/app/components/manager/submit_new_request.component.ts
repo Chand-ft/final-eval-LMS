@@ -152,22 +152,11 @@ export class submit_new_requestComponent {
       );
       this.page.leaveDays = outputVariables.local.results;
 
-      this.sd_gfjk2Y9ZpfWqNC68(bh);
       bh = this.sd_bNaODwW8TeDhzwB9(bh);
       //appendnew_next_sd_yvsSmHmHkMKnACAz
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_yvsSmHmHkMKnACAz');
-    }
-  }
-
-  sd_gfjk2Y9ZpfWqNC68(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.leaveDays);
-      //appendnew_next_sd_gfjk2Y9ZpfWqNC68
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_gfjk2Y9ZpfWqNC68');
     }
   }
 

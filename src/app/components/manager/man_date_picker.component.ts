@@ -178,6 +178,8 @@ export class man_date_pickerComponent {
       bh.input.path = 'storeLeaveRequest';
       bh.input.method = 'Post';
       page.dateOfBirth.value.owner = page.currentUser.email;
+      page.dateOfBirth.value.reportingManager =
+        page.currentUser.reportingManager;
       bh.input.body = page.dateOfBirth.value;
 
       console.log('form', page.dateOfBirth);
@@ -234,7 +236,9 @@ export class man_date_pickerComponent {
         this.sdService.getPathAndQParamsObj('/home/man/new');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_ytHft7VVISZrB7Jp
       return bh;
     } catch (e) {

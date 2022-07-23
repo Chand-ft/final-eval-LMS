@@ -187,7 +187,9 @@ export class registerComponent {
         this.sdService.getPathAndQParamsObj('/login');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_S0mh2FR6gnJS4XBV
       return bh;
     } catch (e) {

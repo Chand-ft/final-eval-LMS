@@ -12,6 +12,13 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import {
+  FormControl,
+  ReactiveFormsModule,
+  FormGroup,
+  Validators,
+  ValidationErrors,
+} from '@angular/forms'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -78,10 +85,57 @@ export class emp_available_daysComponent {
 
   sd_jI86YhGKSFtg8kw4(bh) {
     try {
+      bh = this.sd_30agkQAUUWgS3Nmc(bh);
       //appendnew_next_sd_jI86YhGKSFtg8kw4
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_jI86YhGKSFtg8kw4');
+    }
+  }
+
+  sd_30agkQAUUWgS3Nmc(bh) {
+    try {
+      this.page.FG = FormGroup;
+      bh = this.sd_HJvA40CV5Vg8HYB2(bh);
+      //appendnew_next_sd_30agkQAUUWgS3Nmc
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_30agkQAUUWgS3Nmc');
+    }
+  }
+
+  sd_HJvA40CV5Vg8HYB2(bh) {
+    try {
+      const page = this.page;
+      page.dateOfBirth = new FormGroup({
+        startDate: new FormControl('', [Validators.required]),
+        endDate: new FormControl('', [Validators.required]),
+        leaveType: new FormControl('', [Validators.required]),
+        textArea: new FormControl(''),
+      });
+
+      bh = this.sd_oxczA7AP3OGv5jJX(bh);
+      //appendnew_next_sd_HJvA40CV5Vg8HYB2
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_HJvA40CV5Vg8HYB2');
+    }
+  }
+
+  sd_oxczA7AP3OGv5jJX(bh) {
+    try {
+      const page = this.page;
+      page.leaveTypes = [
+        { leaveType: 'Sick' },
+        { leaveType: 'Annual' },
+        { leaveType: 'Compationate' },
+        { leaveType: 'Maternity' },
+        { leaveType: 'Special' },
+      ];
+      //appendnew_next_sd_oxczA7AP3OGv5jJX
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_oxczA7AP3OGv5jJX');
     }
   }
 

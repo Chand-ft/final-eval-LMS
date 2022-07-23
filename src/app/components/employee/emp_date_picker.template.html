@@ -33,7 +33,7 @@
               </div>
               <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
                 <mat-form-field [appearance]="&apos;legacy&apos;">
-                  <input matInput placeholder="Select start date" [matDatepicker]="picker1" formControlName="startDate" [required]="false" [disabled]="false" readonly="true">
+                  <input matInput placeholder="Select start date" [matDatepicker]="picker1" formControlName="startDate" [max]="&apos;endDate.value&apos;" [required]="false" [disabled]="false" readonly="true">
                   <mat-datepicker-toggle matSuffix [for]="picker1" disabled="false"></mat-datepicker-toggle>
                   <mat-datepicker #picker1 [disabled]="false"></mat-datepicker>
 
@@ -41,7 +41,7 @@
               </div>
               <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
                 <mat-form-field [appearance]="&apos;legacy&apos;">
-                  <input matInput placeholder="Select end date" [matDatepicker]="picker2" formControlName="endDate" [required]="false" [disabled]="false" readonly="true">
+                  <input matInput placeholder="Select end date" [matDatepicker]="picker2" formControlName="endDate" [min]="&apos;startDate.value&apos;" [required]="false" [disabled]="false" readonly="true">
                   <mat-datepicker-toggle matSuffix [for]="picker2" disabled="false"></mat-datepicker-toggle>
                   <mat-datepicker #picker2 [disabled]="false"></mat-datepicker>
 

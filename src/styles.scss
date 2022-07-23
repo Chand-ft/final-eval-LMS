@@ -246,6 +246,9 @@ input:-webkit-autofill {
     overflow-y: auto;
 }
 .underLogoSmall{
-    height: calc(100vh - 290px);
+    height: calc(100vh - 288px);
     overflow-y: auto;
+}
+.manViewHeight{
+    height: calc(100vh - 394px);
 }

@@ -118,7 +118,6 @@ export class emp_pendingComponent {
       this.page.resultFormDB = outputVariables.local.results;
 
       bh = this.sd_dErLXDqPZrIklbNd(bh);
-      this.sd_3DrjXrnNzH9XvQvN(bh);
       //appendnew_next_sd_L9T4dZgNQDBwTugY
       return bh;
     } catch (e) {
@@ -136,16 +135,6 @@ export class emp_pendingComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_dErLXDqPZrIklbNd');
-    }
-  }
-
-  sd_3DrjXrnNzH9XvQvN(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.requestRetrieved);
-      //appendnew_next_sd_3DrjXrnNzH9XvQvN
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_3DrjXrnNzH9XvQvN');
     }
   }
 

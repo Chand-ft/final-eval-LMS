@@ -142,22 +142,11 @@ export class emp_landingComponent {
       );
       this.page.leaveDays = outputVariables.local.results;
 
-      this.sd_2IJPJEmoHMhT9tfN(bh);
       bh = this.sd_OqMlPI9VOjJSA12W(bh);
       //appendnew_next_sd_rvTel57wdVhnguKy
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_rvTel57wdVhnguKy');
-    }
-  }
-
-  sd_2IJPJEmoHMhT9tfN(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.leaveDays);
-      //appendnew_next_sd_2IJPJEmoHMhT9tfN
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_2IJPJEmoHMhT9tfN');
     }
   }
 

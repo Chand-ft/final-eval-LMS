@@ -183,22 +183,11 @@ export class man_landingComponent {
       );
       this.page.leaveDays = outputVariables.local.results;
 
-      this.sd_4DYArhfpp7LRP4y1(bh);
       bh = this.sd_oPGJDI3JpK6g36kC(bh);
       //appendnew_next_sd_jMuOLG6veZMWzIcW
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_jMuOLG6veZMWzIcW');
-    }
-  }
-
-  sd_4DYArhfpp7LRP4y1(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.leaveDays);
-      //appendnew_next_sd_4DYArhfpp7LRP4y1
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_4DYArhfpp7LRP4y1');
     }
   }
 
