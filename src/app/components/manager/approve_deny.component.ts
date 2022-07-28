@@ -13,6 +13,8 @@ import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
 import { testClient } from 'app/sd-services/testClient'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -203,10 +205,41 @@ export class approve_denyComponent {
       );
       this.page.resultFormDB = outputVariables.local.results;
 
+      bh = this.sd_CJT9tLrVq3QWhAar(bh);
       //appendnew_next_sd_Ac0n2VknS29F7mVr
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_Ac0n2VknS29F7mVr');
+    }
+  }
+
+  sd_CJT9tLrVq3QWhAar(bh) {
+    try {
+      this.__page_injector__.get(MatSnackBar).open('Leave status Updated', '', {
+        duration: 3000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
+      bh = this.sd_hkOnSqCqynKeCJ7U(bh);
+      //appendnew_next_sd_CJT9tLrVq3QWhAar
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_CJT9tLrVq3QWhAar');
+    }
+  }
+
+  async sd_hkOnSqCqynKeCJ7U(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home/man/view');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_hkOnSqCqynKeCJ7U
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_hkOnSqCqynKeCJ7U');
     }
   }
 

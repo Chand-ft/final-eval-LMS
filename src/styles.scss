@@ -79,6 +79,16 @@ p, h1, h2, h3, h4, h5, h6 {
 .scrollVertical{
     overflow-y: auto;
 }
+.fitContent{
+    height: fit-content;
+    width: fit-content;
+}
+.pointerCursor{
+    cursor: pointer;
+}
+.fullvh{
+    height:100vh
+}
 // Standard styles
 
 // Pages
@@ -112,10 +122,7 @@ bh-submit_new_request,bh-man_landing, bh-man_date_picker,bh-veiw_requests,bh-man
     } 
 }
 // Global 
-.fitContent{
-    height: fit-content;
-    width: fit-content;
-}
+
 .loginRegHeading{
     font-size: 23px;
     font-weight: bold;
@@ -153,9 +160,7 @@ bh-submit_new_request,bh-man_landing, bh-man_date_picker,bh-veiw_requests,bh-man
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
-.pointerCursor{
-    cursor: pointer;
-}
+
 .userIcon{
     font-size: 75px;
     color: #c91825;
@@ -229,9 +234,7 @@ input:-webkit-autofill {
 .manOptionsBody{
     height: calc(100vh - 340px);
 }
-.fullvh{
-    height:100vh
-}
+
 .redBorders{
     height: 100vh;
     border-top: solid #c91825 30px;

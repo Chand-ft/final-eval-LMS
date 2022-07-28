@@ -27,12 +27,28 @@
             </div>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
-            <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true" *ngIf="item?.status == &apos;rejected&apos; || item?.status == &apos;Rejected&apos;">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="item.status == &apos;rejected&apos; || item.status == &apos;Rejected&apos;">
+                <mat-icon class="greyBoxCrossIcon">thumb_down</mat-icon>
+                <div>
+                  <p class="greyBoxSmallText" style="color: red;">Rejected</p>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true" *ngIf="item?.status == &apos;approved&apos; || item?.status == &apos;Approved&apos;">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="item.status == &apos;approved&apos; || item.status == &apos;Approved&apos;">
+                <mat-icon class="greyBoxTickIcon">thumb_up</mat-icon>
+                <div>
+                  <p class="greyBoxSmallText" style="color: green;">Approved</p>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true" *ngIf="item?.status == &apos;pending&apos; || item?.status == &apos;Pending&apos;">
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <mat-icon class="pointerCursor greyBoxTickIcon" (click)="respondToLeave(&apos;approved&apos;,item)">check</mat-icon>
+                <mat-icon class="pointerCursor greyBoxTickIcon" (click)="respondToLeave(&apos;Approved&apos;,item)">check</mat-icon>
               </div>
               <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-                <mat-icon class="pointerCursor greyBoxCrossIcon" (click)="respondToLeave(&apos;rejected&apos;,item)">clear</mat-icon>
+                <mat-icon class="pointerCursor greyBoxCrossIcon" (click)="respondToLeave(&apos;Rejected&apos;,item)">clear</mat-icon>
               </div>
             </div>
           </div>

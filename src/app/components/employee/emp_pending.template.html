@@ -25,19 +25,19 @@
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
             <div fxLayout="row wrap" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true">
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="item.status == &apos;pending&apos;">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="item.status == &apos;pending&apos; || item.status == &apos;Pending&apos;">
                 <mat-icon class="greyBoxPendingIcon">hourglass_empty</mat-icon>
                 <div>
                   <p class="greyBoxSmallText" style="color: orange;">Pending</p>
                 </div>
               </div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="item.status == &apos;approved&apos;">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="item.status == &apos;approved&apos; || item.status == &apos;Approved&apos;">
                 <mat-icon class="greyBoxTickIcon">thumb_up</mat-icon>
                 <div>
                   <p class="greyBoxSmallText" style="color: green;">Approved</p>
                 </div>
               </div>
-              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="item.status == &apos;rejected&apos;">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="item.status == &apos;rejected&apos; || item.status == &apos;Rejected&apos;">
                 <mat-icon class="greyBoxCrossIcon">thumb_down</mat-icon>
                 <div>
                   <p class="greyBoxSmallText" style="color: red;">Rejected</p>
